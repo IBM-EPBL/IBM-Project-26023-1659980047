@@ -1,0 +1,62 @@
+#traffic light for raspberry pi simlulating in pycham with GUI
+import turtle
+import time
+wn= turtle.getscreen()
+wn.title(&quot;Stoplight By Gogulkrish&quot;)
+wn.bgcolor(&quot;black&quot;)
+#gui interfrace
+pen= turtle.Turtle()
+pen.color(&quot;Yellow&quot;)
+pen.width(4)
+pen.hideturtle()
+pen.penup()
+pen.goto(-30, 60)
+pen.pendown()
+pen.fd(60)
+pen.rt(90)
+pen.fd(120)
+pen.rt(90)
+pen.fd(60)
+pen.rt(90)
+pen.fd(120)
+
+#red light
+red_light =turtle.Turtle()
+red_light.shape(&quot;circle&quot;)
+red_light.color(&quot;grey&quot;)
+red_light.penup()
+red_light.goto(0, 40)
+#Yellow light
+yellow_light =turtle.Turtle()
+yellow_light.shape(&quot;circle&quot;)
+yellow_light.color(&quot;grey&quot;)
+yellow_light.penup()
+yellow_light.goto(0, 0)
+#Green light
+green_light =turtle.Turtle()
+green_light.shape(&quot;circle&quot;)
+green_light.color(&quot;grey&quot;)
+green_light.penup()
+green_light.goto(0, -40)
+
+while True:
+yellow_light.color(&quot;grey&quot;)
+red_light.color(&quot;red&quot;)
+print(&quot;Red light Blinked - Now vehicle Stop behind zebra cross..&quot;)
+print(&quot;Blink!!&quot;)
+time.sleep(2)
+print(&quot;Blink!!&quot;)
+red_light.color(&quot;grey&quot;)
+green_light.color(&quot;green&quot;)
+print(&quot;Green light on- Now vehicle can go..&quot;)
+print(&quot;Blink!!&quot;)
+time.sleep(3)
+print(&quot;Blink!!&quot;)
+green_light.color(&quot;grey&quot;)
+yellow_light.color(&quot;yellow&quot;)
+print(&quot;Yellow light Blinked- Now vehicle Ready to go..&quot;)
+print(&quot;Blink!!&quot;)
+time.sleep(1)
+print(&quot;Blink!!&quot;)
+
+wn.mainloop()
