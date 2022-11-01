@@ -1,0 +1,53 @@
+Build a python code, assume u get temp and humidity values
+(generated with random function to a variable) and write a
+conditon to continuously detect alarm in
+case of high temperature&#39;&#39;&#39;
+#import the necessary package!
+import requests
+import random
+from time import *
+gate=True
+#input the city name
+def run_city():
+city = input(&#39;input the city name&#39;)
+print(city)
+# or you can also hard-code the value
+#Display the message!
+print(&#39;Displaying Weater report for: &#39; + city)
+#fetch the weater details
+url = &#39;https://wttr.in/{}&#39;.format(city)
+res = requests.get(url)
+#display the result!
+print(res.text)
+#temprature searching
+while(gate):
+temperature = random.randint(0,50)
+humidity = random.randint(10,50)
+if temperature&gt;45 and humidity&lt;50:
+print(&quot;Temperature =&quot;,temperature,&quot;Humidity =&quot;,humidity)
+print(&quot;Alert message in Activate&quot;)
+gate=False
+else:
+print(&quot;Temperature =&quot;,temperature,&quot;Humidity&quot;,humidity)
+sleep(1);
+#enter temprature value
+x= int(input(&quot;Please enter the Humidity value :&quot;))
+y= int(input(&quot;Please enter the temperature value :&quot;))
+z=print(x,y)
+print(z)
+if x == 36.5:
+print(&quot;Due to Temperature report you are in normal days&quot;)
+if x &lt; 36:
+print(&quot;your Temperature is low compare to normal days&quot;)
+if x &gt; 36:
+print(&quot;your Temperature is high compare to normal days&quot;)
+if y == 45:
+
+print(&quot;Due to Humidity report you are in normal place&quot;)
+if y &lt; 45:
+print(&quot;your Humidity is low compare to normal days&quot;)
+if y &gt; 45:
+print(&quot;your Humidity is high compare to normal days&quot;)
+
+while True:
+run_city()
